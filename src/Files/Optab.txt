@@ -1,0 +1,4 @@
+STA	23
+LDA	00
+ADD	55
+SUB	89
