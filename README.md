@@ -32,12 +32,14 @@ END
 # optab.txt
 STA
 23
+
 LDA
 00
 
 # Symtab.txt
 ALPHA
 1006
+
 BETA
 1009
 
