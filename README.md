@@ -12,10 +12,10 @@ COPY
 START
 1000
 
-  LDA
+    LDA
 ALPHA
 
-  STA
+    STA
 BETA
 
 ALPHA
