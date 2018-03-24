@@ -9,64 +9,41 @@ public class SymTab {
     public static void Start(String symtabFileLocation) throws IOException{
         StringBuilder allAddressSB = new StringBuilder();
         StringBuilder symSB = new StringBuilder();
-        boolean programStart = false; 
-//        boolean startHere = false;
+        boolean programStart = false;
         for(int i = 0;;i++){
             if(Input.Program[i].equals("END"))
                 break;
             if(programStart){
                 if(Input.Program[i].equals("RESW")){
-//                    if(startHere == false)
-                        
-//                    startHere = false;
                     allAddressSB.append(thisAddress).append(" ");
                     symSB.append(Input.Program[i-1]).append(" ").append(thisAddress).append(" ").append(System.getProperty("line.separator"));
-                    
                     thisAddress = thisAddress + (Integer.parseInt(Input.Program[i+1]) * 3);
                 }
                 if(Input.Program[i].equals("RESB")){
-//                    if(startHere == false)
-                        
-//                    startHere = false;
                     allAddressSB.append(thisAddress).append(" ");
                     symSB.append(Input.Program[i-1]).append(" ").append(thisAddress).append(" ").append(System.getProperty("line.separator"));
-                    
                     thisAddress = thisAddress + Integer.parseInt(Input.Program[i+1]);
                 }
                 if(Input.Program[i].equals("WORD")){
-//                    if(startHere == false)
-                        
-//                    startHere = false;
                     allAddressSB.append(thisAddress).append(" ");
                     symSB.append(Input.Program[i-1]).append(" ").append(thisAddress).append(" ").append(System.getProperty("line.separator"));
-                    
                     thisAddress = thisAddress + 3;
                 }
                 if(Input.Program[i].equals("BYTE")){
-//                    if(startHere == false)
-                        
-//                    startHere = false;
                     allAddressSB.append(thisAddress).append(" ");
                     symSB.append(Input.Program[i-1]).append(" ").append(thisAddress).append(" ").append(System.getProperty("line.separator"));
-                    
                     thisAddress = thisAddress + 1;
                 }
                 if(OpTab.OpcodeMatcher(Input.Program[i])){
-//                    if(startHere == false)
-                        
-//                    startHere = false;
                     allAddressSB.append(thisAddress).append(" ");
-                    
                     thisAddress = thisAddress + 3;
                 }
             }
             if("START".equals(Input.Program[i])){
                 programName = Input.Program[i-1];                       //got the program name
                 startingAddress = Integer.parseInt(Input.Program[i+1]); //got the starting address
-//                allAddressSB.append(startingAddress).append(" ");                      //program starts from the starting address
                 thisAddress = startingAddress;                                      //starting address is taken as the current address
                 programStart = true;                                               //set the boolean to start address calculating if statement written above
-//                startHere = true;
             }
         }
         allAddressArray = Ex6Methods.ToStringAndSplit(allAddressSB, " ");
