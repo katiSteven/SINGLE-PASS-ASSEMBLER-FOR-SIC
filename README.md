@@ -8,46 +8,34 @@ The SIC package contains all the classes. The SICAssembler.java contains the mai
 
 ## SAMPLE INPUT & OUTPUT
 # Input.txt:
-COPY
-START
-1000
+    COPY    START   1000
 
-LDA
-ALPHA
+            LDA     ALPHA
 
-STA
-BETA
+            STA     BETA
 
-ALPHA
-RESW
-1
+    ALPHA   RESW    1
 
-BETA
-RESW
-1
+    BETA    RESW    1
 
-END
+            END
 
 
 # optab.txt
-STA
-23
+    STA     23
 
-LDA
-00
+    LDA     00
 
 # Symtab.txt
-ALPHA
-1006
+    ALPHA   1006
 
-BETA
-1009
+    BETA    1009
 
 # Result.txt
 
-H^COPY^1000^0c
+    H^COPY^1000^0c
 
-T^001000^0c^001006^231009
+    T^001000^0c^001006^231009
 
-E^001000
+    E^001000
 
