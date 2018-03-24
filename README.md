@@ -3,7 +3,7 @@ An assembler is a program that accepts as input an assembly language program (so
 
 the project contains two packages(files pkg,SIC pkg).
 The files package contains the input / output text files.
-The SIC package contains all the classes. The SICAssembler.java contains the main, where you need to replace all the existing file locations with the your own file's location.
+The SIC package contains all the classes. The SICAssembler.java contains the main function, where you need to replace all the existing text file locations with the your own text file locations.
 
 
 ## SAMPLE INPUT & OUTPUT
